@@ -1,6 +1,5 @@
 - A great instruction file is not a novel. It is a concise, structured reference that gives the agent exactly what it needs to work effectively in your codebase.
 - A great instruction file has: commands, architecture, conventions, constraints, and known pitfalls
-- Examples
 
 ## Commands (the build, test, run, and lint commands you use often)
 - `pnpm dev` — start dev server
@@ -35,3 +34,16 @@ Next.js 15 App Router. React 19. TypeScript strict. Tailwind CSS 4.
 - PostCSS cannot resolve the `@/` path alias. Use relative paths in
   CSS `@import` statements.
 - The Drizzle adapter requires an `as never` cast due to a type conflict.
+
+> [!IMPORTANT]
+> A line in CLAUDE.md only helps if Claude can act on it.
+> 'Write clean code' sounds nice and says nothing. 'Use named exports, not default exports' is something Claude can actually follow. Specific and concrete beats vague and well-meaning, every time.
+
+
+> [!TIP]
+> - 'Write clean code' → 'Keep functions short - pull anything over 30 lines into its own function'
+> - 'Be careful with the database' → 'Never edit migration files by hand, generate them with npm run db:migrate'
+> - 'Document the code' → 'Add a one-line comment above every exported function'
+> - 'Don't repeat yourself' → 'Put shared logic in utils/ instead of copying it between files'
+
+The left side sounds responsible but decides nothing - 'clean', 'careful', 'documented' each hand the real choice back to whoever's reading. The right side names the actual move, so there's nothing left to interpret.
